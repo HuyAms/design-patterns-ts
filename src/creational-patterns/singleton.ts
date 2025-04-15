@@ -1,3 +1,7 @@
+/**
+ * The Singleton pattern ensures a class has only one instance and provides a global point of access to it.
+ */
+
 export class Singleton {
   private static instance: Singleton;
 
@@ -14,3 +18,9 @@ export class Singleton {
     return Singleton.instance;
   }
 }
+
+// Usage
+const instance1 = Singleton.getInstance();
+const instance2 = Singleton.getInstance();
+
+console.log(instance1 === instance2); // true
