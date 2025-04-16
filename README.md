@@ -137,3 +137,32 @@ const adapter = new ImperialToMetricAdapter(imperialDistance);
 
 Reporter.reportDistance(adapter);
 ```
+
+## Facade
+
+Provides a simplified interface to a library, a framework, or any other complex set of classes.
+
+### Without the pattern
+
+```ts
+const systemA = new SystemA();
+const systemB = new SystemB();
+
+// we need to perform a set of operations in a particular order
+systemA.operationA1();
+systemA.operationA2();
+systemB.operationB2();
+systemB.operationB1();
+```
+
+### With the pattern
+
+```ts
+const systemA = new SystemA();
+const systemB = new SystemB();
+
+const facade = new Facade(systemA, systemB);
+
+// just an simple interface wrapping the operations
+facade.simplifiedOperation1();
+```
