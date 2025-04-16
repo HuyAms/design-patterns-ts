@@ -18,6 +18,8 @@ Here are the implementations of the following design patterns in TypeScript:
 
 A singleton is an object that can only be instantiated once. It is useful fo implementing a global object that can be accessed from anywhere in the application.
 
+We can also create multiple singleton with different keys - check **parametric-singleton**
+
 ## Builder
 
 The builder pattern is a creational design pattern that lets you construct complex objects step by step.
@@ -114,3 +116,9 @@ const cat = new Cat('Scott', 4.5);
 const clonedCat: Cat = cat.clone();
 console.log(clonedCat); // Output: Cat { furColor: 'Scott', weight: 4.5 }
 ```
+
+# Structural Patterns
+
+## Adapter
+
+Allows objects with incompatible interfaces to collaborate.
