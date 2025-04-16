@@ -7,7 +7,7 @@ npx ts-node src/<pattern-name>
 Example
 
 ```
-npx ts-node src/singleton
+npx ts-node src/creational-patterns/singleton
 ```
 
 Here are the implementations of the following design patterns in TypeScript:
@@ -122,3 +122,18 @@ console.log(clonedCat); // Output: Cat { furColor: 'Scott', weight: 4.5 }
 ## Adapter
 
 Allows objects with incompatible interfaces to collaborate.
+
+### Example
+
+```ts
+const metricDistance = new MetricSystem(5);
+
+// report only receives meters
+Reporter.reportDistance(metricDistance);
+
+// feet is not compatible, we need an adapter to convert
+const imperialDistance = new ImperialSystem(10);
+const adapter = new ImperialToMetricAdapter(imperialDistance);
+
+Reporter.reportDistance(adapter);
+```
