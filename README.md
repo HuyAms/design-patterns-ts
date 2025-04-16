@@ -1,6 +1,4 @@
-# Design Patterns in TS
-
-## How to run
+# How to run
 
 ```
 npx ts-node src/<pattern-name>
@@ -14,17 +12,17 @@ npx ts-node src/singleton
 
 Here are the implementations of the following design patterns in TypeScript:
 
-## Creational Patterns
+# Creational Patterns
 
-### Singleton
+## Singleton
 
 A singleton is an object that can only be instantiated once. It is useful fo implementing a global object that can be accessed from anywhere in the application.
 
-### Builder
+## Builder
 
 The builder pattern is a creational design pattern that lets you construct complex objects step by step.
 
-#### Without builder
+### Without builder
 
 a constructor with lots of parameters, which is harder to read and maintain
 
@@ -38,7 +36,7 @@ const car = new Car({
 });
 ```
 
-#### With builder
+### With builder
 
 ```ts
 const car = carBuilder
@@ -50,16 +48,16 @@ const car = carBuilder
   .build();
 ```
 
-### Factory Method
+## Factory Method
 
 Factory Method is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
 
-#### Why it's useful
+### Why it's useful
 
 - Encapsulates object creation logic
 - Makes code easier to extend with new product types
 
-#### Without pattern
+### Without pattern
 
 ```ts
 function exportReport(type: string, content: string) {
@@ -95,4 +93,24 @@ wordReportFactory.createReport('Hello World');
 // adding new type of report is easy
 const excelReportFactory = new ExcelReportFactory();
 excelReportFactory.createReport('Hello World');
+```
+
+## Prototype
+
+Prototype is a creational design pattern that lets you copy existing objects without making your code dependent on their classes.
+
+### Without pattern
+
+```ts
+const cat = new Cat('Scott', 4.5);
+const clonedCat: Cat = new Cat(cat.furColor, cat.weight);
+console.log(clonedCat); // Output: Cat { furColor: 'Scott', weight: 4.5 }
+```
+
+### With pattern
+
+```ts
+const cat = new Cat('Scott', 4.5);
+const clonedCat: Cat = cat.clone();
+console.log(clonedCat); // Output: Cat { furColor: 'Scott', weight: 4.5 }
 ```
